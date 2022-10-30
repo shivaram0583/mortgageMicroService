@@ -22,6 +22,7 @@ import java.util.Date;
 public class Mortgage {
 
     @Id
+    @GeneratedValue
     private int id;
 
     @Column(name="ACCOUNT_NAME")
