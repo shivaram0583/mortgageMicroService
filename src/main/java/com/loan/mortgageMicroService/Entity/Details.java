@@ -13,16 +13,10 @@ import java.util.Date;
 @NoArgsConstructor
 @Data
 public class Details {
-
     private String linkedProperty;
-
     private double monthlyRepayment;
-
     private int term;
-
     private double apr;
-
     private String interestType;
-
     private LocalDate fixedDate;
 }

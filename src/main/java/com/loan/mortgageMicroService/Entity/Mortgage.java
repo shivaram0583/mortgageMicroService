@@ -1,6 +1,7 @@
 package com.loan.mortgageMicroService.Entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
 import org.hibernate.annotations.DynamicUpdate;
 import javax.persistence.*;
@@ -22,7 +23,13 @@ import java.util.Date;
 public class Mortgage {
 
     @Id
+    @NotNull
+    @Column(name = "ID", unique = true)
     private int id;
+
+    @NotNull
+    @Column(name = "Resgistration_SEQ")
+    private Integer reg_seq;
 
     @Column(name="ACCOUNT_NAME")
     @Size(min=2, message = "Account name should not be null..")
@@ -48,13 +55,19 @@ public class Mortgage {
     private String currency;
 
     @NotNull
+    @Column(name = "STATUS")
+    private String status;
+
+    @NotNull
     @Column(name="BALANCE_DATE")
     private LocalDate balanceDate;
 
     @Column(name = "CREATED_DATE")
+    @ApiModelProperty(hidden = true)
     private Date createdDate;
 
     @Column(name = "LAST_UPDATED")
+    @ApiModelProperty(hidden = true)
     private Date lastUpdate;
 
     @PrePersist
