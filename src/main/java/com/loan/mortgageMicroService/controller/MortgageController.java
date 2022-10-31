@@ -56,7 +56,7 @@ public class MortgageController{
         ResponseEntity<Mortgage> responseEntity = null;
         log.info("----Inside POST mortgage controller----");
         responseEntity = mortgageService.postMortgageDetails(mortgageModel);
-        return responseEntity;
+        return new ResponseEntity(responseEntity, HttpStatus.CREATED);
     }
 
     @PutMapping("/updateMortgage/{id}")
