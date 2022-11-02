@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class registrationResponse {
+public class RegistrationResponse {
     private Integer reg_seq;
     private String status;
 }
